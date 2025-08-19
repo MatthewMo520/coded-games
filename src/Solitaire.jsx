@@ -300,7 +300,6 @@ const Solitaire = ({ onBack }) => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image with subtle fade for gameplay visibility */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{ backgroundImage: `url(${backgroundImage})` }}

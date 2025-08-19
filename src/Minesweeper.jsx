@@ -34,7 +34,6 @@ const Minesweeper = ({ onBack }) => {
     const cols = board[0].length;
     const newBoard = board.map(row => row.map(cell => ({ ...cell })));
     
-    // Get all cells that are safe (first click cell and its neighbors)
     const safeCells = new Set();
     for (let dr = -1; dr <= 1; dr++) {
       for (let dc = -1; dc <= 1; dc++) {
@@ -58,7 +57,6 @@ const Minesweeper = ({ onBack }) => {
       }
     }
 
-    // Calculate neighbor counts
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
         if (!newBoard[r][c].isMine) {
@@ -101,7 +99,6 @@ const Minesweeper = ({ onBack }) => {
     setBoard(prevBoard => {
       let workingBoard = prevBoard.map(r => r.map(c => ({ ...c })));
       
-      // Place mines on first click if not already placed
       if (!minesPlaced) {
         const config = DIFFICULTY_LEVELS[difficulty];
         workingBoard = placeMinesAfterFirstClick(workingBoard, row, col, config.mines);
@@ -145,7 +142,6 @@ const Minesweeper = ({ onBack }) => {
         }
       }
       
-      // Only check win condition after mines are placed and ensure we have valid mine count
       const totalMines = workingBoard.flat().filter(c => c.isMine).length;
       const config = DIFFICULTY_LEVELS[difficulty];
       
@@ -224,7 +220,6 @@ const Minesweeper = ({ onBack }) => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image with subtle fade for gameplay visibility */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{ backgroundImage: `url(${backgroundImage})` }}

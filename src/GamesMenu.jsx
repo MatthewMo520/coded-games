@@ -53,7 +53,6 @@ const GamesMenu = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image with overlays matching your personal website */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}

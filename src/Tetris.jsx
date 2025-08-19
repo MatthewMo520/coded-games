@@ -133,7 +133,7 @@ const Tetris = ({ onBack }) => {
     const { board: clearedBoard, linesCleared } = clearLines(newBoard);
     
     setBoard(clearedBoard);
-    setScore(prev => prev + linesCleared * 100 * level + (dropY - position.y) * 2); // Extra points for hard drop
+    setScore(prev => prev + linesCleared * 100 * level + (dropY - position.y) * 2);
     setLevel(prev => Math.floor(score / 1000) + 1);
     setCanHold(true);
     spawnNewPiece();
@@ -143,16 +143,13 @@ const Tetris = ({ onBack }) => {
     if (!currentPiece || gameOver || isPaused || !canHold) return;
     
     if (heldPiece) {
-      // Swap current piece with held piece
       const tempPiece = { ...currentPiece };
       setCurrentPiece({ ...heldPiece });
       setHeldPiece(tempPiece);
       
-      // Reset position for the swapped piece
       const startX = Math.floor(BOARD_WIDTH / 2) - Math.floor(heldPiece.shape[0].length / 2);
       setPosition({ x: startX, y: 0 });
     } else {
-      // Hold current piece and spawn new one
       setHeldPiece({ ...currentPiece });
       spawnNewPiece();
     }
@@ -289,7 +286,6 @@ const Tetris = ({ onBack }) => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image with subtle fade for gameplay visibility */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -323,7 +319,6 @@ const Tetris = ({ onBack }) => {
         </div>
         
         <div className="flex justify-center gap-8 max-w-7xl mx-auto">
-          {/* Hold Piece Display */}
           <div className="flex flex-col items-center">
             <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 mb-4 shadow-lg">
               <h3 className="text-white text-sm font-bold mb-2 text-center">Hold</h3>
