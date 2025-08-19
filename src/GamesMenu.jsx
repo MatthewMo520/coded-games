@@ -11,21 +11,21 @@ const GamesMenu = () => {
     {
       id: 'tetris',
       name: 'Tetris',
-      description: 'Stack falling blocks to clear lines',
+      description: 'Clear lines by stacking blocks',
       icon: '🎮',
       color: 'bg-pastel-lightBlue border-pastel-blue',
     },
     {
       id: 'minesweeper',
       name: 'Minesweeper',
-      description: 'Find hidden mines using number clues',
+      description: 'Avoid mines using numbered hints',
       icon: '⛏️',
       color: 'bg-pastel-lightRed border-pastel-red',
     },
     {
       id: 'solitaire',
       name: 'Solitaire',
-      description: 'Move all cards to the foundation piles',
+      description: 'Sort all cards by suit and rank',
       icon: '♠️',
       color: 'bg-pastel-lightGreen border-pastel-green',
     },
@@ -69,7 +69,7 @@ const GamesMenu = () => {
             Games
           </h1>
           <p className="text-white/80 max-w-2xl mx-auto text-lg transition-all duration-500 drop-shadow-md">
-            Pick a game and start playing
+            Choose your game
           </p>
         </div>
         

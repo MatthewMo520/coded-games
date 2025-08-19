@@ -10,7 +10,7 @@ const DIFFICULTY_LEVELS = {
 const Minesweeper = ({ onBack }) => {
   const [difficulty, setDifficulty] = useState('easy');
   const [board, setBoard] = useState([]);
-  const [gameState, setGameState] = useState('playing'); // playing, won, lost
+  const [gameState, setGameState] = useState('playing');
   const [minesLeft, setMinesLeft] = useState(0);
   const [timer, setTimer] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
@@ -285,7 +285,7 @@ const Minesweeper = ({ onBack }) => {
         {gameState === 'lost' && (
           <div className="bg-pastel-red backdrop-blur-md border border-pastel-red rounded-xl p-6 mb-8 text-center transform transition-all duration-500 hover:scale-105 shadow-lg">
             <div className="text-2xl font-bold mb-2 text-gray-800">💥 Game Over!</div>
-            <div className="text-lg text-gray-700">You hit a mine!</div>
+            <div className="text-lg text-gray-700">Better luck next time!</div>
           </div>
         )}
 
